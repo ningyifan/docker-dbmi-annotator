@@ -124,11 +124,11 @@ $ browserify app.js -o public/dbmiannotator/js/app.bundle.js
 
 (4) Build docker image dbmi-annotator
 
-$ docker-compose build
+$ docker build -t <dockerhub>/dbmi-annotator:latest .
 
-(5) Run dbmi-annotator in production mode:
+(5) Push images to docker hub
 
-$ docker-compose up
+$ docker push <dockerhub>/dbmi-annotator:latest
 
 Optional: run dbmi-annotator on localhost:3000
 
@@ -146,3 +146,14 @@ Clean docker containers:
 
 $ docker stop $(docker ps -a -q)
 $ docker rm $(docker ps -a -q)
+
+######################################################################
+Deploy DBMI-Annotator on production mode
+######################################################################
+
+(1) Install docker and docker-compose
+(2) Run dbmi-annotator with all dependencies in docker container
+
+$ cd dbmi-annotator
+$ docker-compose up
+
