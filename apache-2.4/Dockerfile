@@ -42,7 +42,7 @@ RUN a2enconf localhost
 #RUN apache2ctl graceful
 RUN service apache2 restart
 
-EXPOSE 80
+#EXPOSE 80
 
 # Start apache2 server
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
